@@ -265,6 +265,43 @@
     </div>
   </section>
 
+  <!-- ============================================================= log -->
+  <section id="log">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Revision log</h2>
+        <span class="section-note">What changed after review, and why</span>
+      </div>
+
+      <ul class="log">
+        <li>
+          <p class="when">November 2026 · reviewed against the course self-check list</p>
+          <h4>Four usability fixes</h4>
+          <p>Reading the page against the course's portfolio checklist surfaced problems that
+             a visual pass misses: the navigation vanished entirely below 620&nbsp;px, secondary
+             text sat just under a comfortable contrast ratio, the page requested a favicon that
+             did not exist (a 404 on every load), and there was no keyboard skip link.
+             All four are fixed in
+             <a href="https://github.com/WANG-WEICHENG-mc644348/data-science-portfolio/commit/8be9446"><code>8be9446</code></a>.</p>
+        </li>
+        <li>
+          <p class="when">November 2026</p>
+          <h4>Figures hosted locally instead of hot-linked</h4>
+          <p>The first version pulled charts from <code>raw.githubusercontent.com</code>. If a
+             project repository renamed a branch or moved a file, the portfolio would break
+             silently. Images are now copied into <code>assets/img/</code>.</p>
+        </li>
+        <li>
+          <p class="when">November 2026</p>
+          <h4>Added the team project, with an explicit role panel</h4>
+          <p>The site previously featured one project. The CISC7204 team project now leads the
+             page, and the contribution panel states which parts of a six-person submission
+             are mine — rather than leaving a reader to guess.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
 </main>
 
 <footer>
