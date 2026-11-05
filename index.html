@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WANG Weicheng — Data Science Portfolio</title>
+<meta name="description" content="WANG Weicheng, MSc Data Science at the University of Macau. Reproducible analyses of judicial trust in China and the crime–housing relationship in London.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">WANG Weicheng <span>· Data Science</span></a>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#next">Next</a>
+      <a href="https://github.com/WANG-WEICHENG-mc644348">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============================================================ hero -->
+  <div class="wrap hero">
+    <p class="eyebrow">Data Science Portfolio · University of Macau</p>
+    <h1>WANG Weicheng</h1>
+    <p class="subtitle">MSc in Data Science · CISC7204 Data Science and Data Visualization</p>
+
+    <p class="lede">
+      I turn large, messy public datasets into claims that survive scrutiny — and I try to
+      show the moment a claim stops holding. My work sits between
+      <strong>computational social science</strong> and <strong>public policy</strong>:
+      national survey data on one side, open city data on the other.
+      Everything below is reproducible from the linked repository.
+    </p>
+
+    <div class="chips">
+      <span class="chip">Two featured projects</span>
+      <span class="chip">Python · pandas · statsmodels · matplotlib</span>
+      <span class="chip">Reproducible by design</span>
+      <span class="chip">Open data only</span>
+    </div>
+  </div>
+
+  <!-- ============================================================ work -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Selected work</h2>
+        <span class="section-note">Two projects, two very different kinds of evidence</span>
+      </div>
+
+      <!-- ------------------------------------------------ project one -->
+      <article class="project">
+        <div class="project-head">
+          <p class="project-kicker">Team project · six members · 2026</p>
+          <h3><a href="https://github.com/WANG-WEICHENG-mc644348/cisc7204-team05-london-housing-crime">
+            Crime and House Prices in London Boroughs</a></h3>
+          <p class="rq">
+            <b>Research question.</b> Is a higher recorded crime rate associated with lower
+            house prices across London boroughs — and does that association survive a change
+            in how the rate is measured, where you look, and when?
+          </p>
+        </div>
+
+        <figure class="figure">
+          <img src="assets/img/london_denominator.png"
+               alt="Line chart: Spearman correlation between crime rate and average house price falls from +0.47 to −0.20 as the denominator shifts weight from residents to jobs.">
+          <figcaption>
+            <strong>The headline number is an artefact of a definition.</strong>
+            Re-weighting the denominator from residents to residents plus daytime workers
+            moves the correlation from +0.47 to −0.20, crossing zero at k ≈ 1.22.
+            A sign that flips across a defensible range of definitions should not be quoted
+            as a single number — so the project reports the curve, not the point.
+          </figcaption>
+        </figure>
+
+        <div class="cols">
+          <div class="body">
+            <ul class="findings">
+              <li>The raw cross-section is <b>+0.47</b> (n = 32, permutation
+                  <i>p</i> = 0.008) — crime and price rise <i>together</i>, the opposite of
+                  common sense.</li>
+              <li>It halves to <b>0.24</b> once median earnings are controlled, and falls to
+                  <b>0.08</b> when the denominator includes daytime workers.</li>
+              <li>Compare a borough with itself over time and the association is
+                  <b>0.14</b> (552 year-pairs) — real, but a third of the headline.</li>
+              <li>Split by geography and the sign changes: <b>+0.83</b> in inner London,
+                  <b>−0.29</b> in outer London (<i>p</i> = 0.20, not significant).</li>
+              <li>Offence type matters: burglary tracks prices at <b>0.74</b>, violent crime
+                  at <b>0.26</b>, criminal damage at <b>−0.01</b>.</li>
+            </ul>
+            <p style="font-size:15.5px;color:var(--muted)">
+              Conclusion: most of the apparent relationship is a <i>between-borough</i>
+              difference — dense, expensive, job-rich boroughs record more crime and cost
+              more — not something that happens when a borough's crime rate actually moves.
+            </p>
+          </div>
+
+          <div>
+            <div class="callout">
+              <h4>My role in this team</h4>
+              <p><strong>Team reporter · Project analyst.</strong> Lead product: the
+                 within-borough change analysis and its figure.</p>
+              <ul>
+                <li>Designed and ran the year-pair analysis — <strong>552 pairs</strong>,
+                    cluster bootstrap over boroughs, City of London sensitivity — and
+                    produced the change figure.</li>
+                <li>Built the reproducible pipeline that recomputes <em>every</em> statistic
+                    and figure from the two source CSVs; re-running it reproduces the
+                    results file byte-for-byte.</li>
+                <li>Ran the denominator sweep and the robustness checks
+                    (earnings partialling, inner/outer split, leave-one-out, offence types).</li>
+                <li>Wrote and delivered the project presentation; edited the
+                    introductory video.</li>
+              </ul>
+            </div>
+
+            <dl class="meta">
+              <dt>Data</dt>
+              <dd>London Datastore / MPS recorded crime; UK House Price Index — Open Government Licence</dd>
+              <dt>Methods</dt>
+              <dd>Spearman rank correlation, permutation tests, cluster bootstrap, first differences</dd>
+              <dt>Code</dt>
+              <dd>Python · pandas · numpy · matplotlib</dd>
+            </dl>
+
+            <div class="links">
+              <a class="btn" href="https://github.com/WANG-WEICHENG-mc644348/cisc7204-team05-london-housing-crime">
+                Repository &amp; full write-up →</a>
+              <span class="status">Ongoing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="duo" style="margin-top:34px">
+          <figure class="figure">
+            <img src="assets/img/london_baseline.png"
+                 alt="Scatter plot of crime rate against average house price for 32 London boroughs, showing a positive relationship.">
+            <figcaption>Figure 1 — the baseline cross-section, 2016–2018 borough means.
+              The common-sense claim predicts a downward slope; the cloud slopes up.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="assets/img/london_within.png"
+                 alt="Scatter plot of year-to-year change in crime rate against year-to-year change in price, 552 within-borough pairs.">
+            <figcaption>Figure 6 — the analysis I led: change inside a borough, 552 year-pairs.
+              Far weaker than the cross-section, as a confounded comparison should be.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <!-- ------------------------------------------------ project two -->
+      <article class="project">
+        <div class="project-head">
+          <p class="project-kicker">Individual project · ongoing</p>
+          <h3><a href="https://github.com/WANG-WEICHENG-mc644348/data-science-project">
+            Did Digital Media Erode Trust in China's Courts?</a></h3>
+          <p class="rq">
+            <b>Research question.</b> Does the spread of digital media erode public trust in
+            the judiciary? A two-wave study using the China General Social Survey
+            (CGSS 2017 and 2023), n = 3,953 and 5,583.
+          </p>
+        </div>
+
+        <div class="cols">
+          <figure class="figure" style="margin:0">
+            <img src="assets/img/trust_cohort.png"
+                 alt="Chart of judicial trust rate by birth cohort in 2017 and 2023, showing trust rising across every cohort.">
+            <figcaption>Judicial trust by birth cohort, 2017 vs 2023. The rise is shared
+              across generations rather than concentrated in one.</figcaption>
+          </figure>
+
+          <div class="body">
+            <ul class="findings">
+              <li><b>Trust rose sharply:</b> 61.9% → 83.1%, a gain of 21 points, with the
+                  direction consistent across three measurement choices.</li>
+              <li><b>The rise was inclusive, not polarised</b> — the urban–rural gap
+                  (<i>p</i> = 0.54) and the education gradient (<i>p</i> = 0.97) were unchanged.</li>
+              <li><b>The 1980s cohort moved most</b>, and generational gaps converged.</li>
+              <li><b>Internet use is modestly negative but fading</b> — not significant in the
+                  full specification (<i>p</i> = 0.11).</li>
+              <li><b>Perceived fairness, not technology exposure,</b> is the strongest
+                  predictor of trust (+7.0 pp per step).</li>
+            </ul>
+
+            <dl class="meta">
+              <dt>Data</dt>
+              <dd>CGSS 2017 &amp; 2023, de-identified derived variables only; raw microdata not redistributed</dd>
+              <dt>Methods</dt>
+              <dd>Weighted linear probability models, city-clustered standard errors, cross-wave measurement harmonisation</dd>
+            </dl>
+
+            <div class="links">
+              <a class="btn" href="https://github.com/WANG-WEICHENG-mc644348/data-science-project">
+                Repository &amp; full write-up →</a>
+              <span class="status">Ongoing</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========================================================== skills -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Technical skills</h2>
+        <span class="section-note">What I actually reach for</span>
+      </div>
+
+      <div class="skills">
+        <div class="skill">
+          <h4>Languages</h4>
+          <p>Python (primary), R, Stata, SQL</p>
+        </div>
+        <div class="skill">
+          <h4>Data analysis</h4>
+          <p>pandas, NumPy, statsmodels, scikit-learn</p>
+        </div>
+        <div class="skill">
+          <h4>Statistics &amp; econometrics</h4>
+          <p>Rank and linear models, weighted estimation, clustered errors,
+             resampling and permutation inference, first differences</p>
+        </div>
+        <div class="skill">
+          <h4>Visualisation</h4>
+          <p>matplotlib, seaborn, choropleth maps, presentation-grade figures</p>
+        </div>
+        <div class="skill">
+          <h4>Survey &amp; panel methods</h4>
+          <p>Cross-wave measurement harmonisation, survey weights,
+             missing-data handling, panel construction</p>
+        </div>
+        <div class="skill">
+          <h4>Reproducibility</h4>
+          <p>Git / GitHub, scripted pipelines with relative paths,
+             executed notebooks, pinned environments</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ next -->
+  <section id="next">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What I am working on next</h2>
+      </div>
+      <ul class="next">
+        <li>Extend the London panel past 2018 once population and jobs estimates are published,
+            and move from a cross-section to a proper trend estimate.</li>
+        <li>Add a spatial model — boroughs are not independent observations, and the
+            inner/outer sign flip is a hint that they should not be treated as one pool.</li>
+        <li>Rebuild the denominator curve as an interactive explorer so a reader can drag
+            <i>k</i> and watch the conclusion change.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>
+      <strong>Reproducibility.</strong> Every number on this page can be regenerated from the
+      linked repositories: clone, install the requirements, and re-run the scripts. The London
+      results file is reproduced byte-for-byte by <code>src/build_analysis.py</code>.
+    </p>
+    <p>
+      <strong>Data.</strong> London housing and crime data are published by the Greater London
+      Authority and the Metropolitan Police Service under the Open Government Licence.
+      The CGSS microdata is not redistributed; only de-identified derived variables are shared.
+    </p>
+    <p>
+      WANG Weicheng · MSc Data Science, University of Macau ·
+      <a href="https://github.com/WANG-WEICHENG-mc644348">github.com/WANG-WEICHENG-mc644348</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
